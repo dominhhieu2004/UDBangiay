@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.thongtinUser">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_ctsp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#F0E5CF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Thông tin"
+        app:titleTextColor="@color/black" />
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageTTKH"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:src="@drawable/ic_launcher_foreground"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/edNameTTKH"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/toolbar_ctsp"-->
+<!--        tools:layout_editor_absoluteX="130dp"-->
+<!--        tools:ignore="MissingConstraints" />-->
+    
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_ctsp"
+        android:id="@+id/nameuser"
+        >
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/edNameTTKH"
+          android:textSize="20dp"
+          android:hint="Họ và tên"
+          />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/nameuser"
+        android:id="@+id/diachiuser"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edDiaChiTTKH"
+            android:textSize="20dp"
+            android:hint="Địa chỉ"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/diachiuser"
+        android:id="@+id/sdtuser"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edSDTTTKH"
+            android:textSize="20dp"
+            android:hint="Số điện thoại"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/luachon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/sdtuser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+            <Button
+                android:id="@+id/btnDMKTTKH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="232dp"
+                android:layout_marginRight="8dp"
+                android:text="Đổi mật khẩu"
+                android:textSize="20dp"
+                />
+
+            <Button
+                android:id="@+id/btnCapNhatTTKH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="116dp"
+                android:textSize="20dp"
+                android:text="     Cập nhật     "
+
+                 />
+
+    </LinearLayout>
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/navigation"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        app:itemBackground="@color/black"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_khachhang"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

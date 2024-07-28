@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.example.myapplication.Activity.GioHangActivity;
 import com.example.myapplication.Activity.Login_khActivity;
+import com.example.myapplication.Activity.thongtinUser;
 import com.example.myapplication.Adapter.SanPhamKHAdapter;
 import com.example.myapplication.Dao.SanPhamDao;
 import com.example.myapplication.IClick.IClickItemRCV;
@@ -71,6 +72,9 @@ public class HomeKH extends AppCompatActivity {
                     buider.show();
                 } else if (item.getItemId() == R.id.navigation_cart) {
                     startActivity(new Intent(HomeKH.this, GioHangActivity.class));
+                } else if (item.getItemId() == R.id.navigation_person) {
+                    Intent i = new Intent(HomeKH.this, thongtinUser.class);
+                    startActivity(i);
                 }
                 return true;
             }

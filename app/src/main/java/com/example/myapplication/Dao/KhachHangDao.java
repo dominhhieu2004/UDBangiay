@@ -50,6 +50,14 @@ public class KhachHangDao {
         contentValues.put("hoTen", obj.getTenKH());
         contentValues.put("diaChi", obj.getDiaChi());
         contentValues.put("sdt", obj.getSdt());
+//        contentValues.put("matKhau", obj.getMatKhau());
+
+        long raw = db.update("KhachHang", contentValues, "maKH =?", new String[]{obj.getMaKH()});
+        return raw;
+    }
+
+    public long updateMK(KhachHang obj){
+        ContentValues contentValues = new ContentValues();
         contentValues.put("matKhau", obj.getMatKhau());
 
         long raw = db.update("KhachHang", contentValues, "maKH =?", new String[]{obj.getMaKH()});

@@ -17,10 +17,12 @@ import android.view.Gravity;
 import android.view.MenuItem;
 
 import com.example.myapplication.Activity.Login_adminActivity;
+import com.example.myapplication.Fragment.DoanhSo_Fragment;
 import com.example.myapplication.Fragment.HangFragment;
 import com.example.myapplication.Fragment.HoaDonFragment;
 import com.example.myapplication.Fragment.HomeAdminFragment;
 import com.example.myapplication.Fragment.SanPhamFragment;
+import com.example.myapplication.Fragment.Top10_Fragment;
 import com.example.myapplication.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,6 +42,9 @@ public class HomeAdmin extends AppCompatActivity implements NavigationView.OnNav
 
     private static final int FRAGMENT_HANG = 3;
 
+    private static final int FRAGMENT_DoanhThu = 4;
+
+    private static final int FRAGMENT_TOP = 5;
     private int currentFragment = FRAGMENT_HOME;
 
     @Override
@@ -62,8 +67,8 @@ public class HomeAdmin extends AppCompatActivity implements NavigationView.OnNav
         navigationView.setNavigationItemSelectedListener(this);
 
         //màn hình vừa đăng nhập là 1 fragment trong navigation
-        replaceFragmnet(new HomeAdminFragment());
-        navigationView.getMenu().findItem(R.id.trangchu).setChecked(true);
+        replaceFragmnet(new SanPhamFragment());
+        navigationView.getMenu().findItem(R.id.sanPham).setChecked(true);
 
     }
 
@@ -83,19 +88,28 @@ public class HomeAdmin extends AppCompatActivity implements NavigationView.OnNav
                 replaceFragmnet(new SanPhamFragment());
                 currentFragment = FRAGMENT_SANPHAM;
             }
-        } else if (id == R.id.trangchu) {
-            if (currentFragment != FRAGMENT_HOME){
-                toolbar.setTitle("Trang chủ");
-                replaceFragmnet(new HomeAdminFragment());
-                currentFragment = FRAGMENT_HOME;
-            }
-        }else if (id == R.id.hang) {
+        } else if (id == R.id.hang) {
             if (currentFragment != FRAGMENT_HANG){
                 toolbar.setTitle("Hãng");
                 replaceFragmnet(new HangFragment());
                 currentFragment = FRAGMENT_HANG;
             }
-        } else if (id == R.id.logout) {
+        } else if (id == R.id.doanhthu) {
+
+            if(currentFragment != FRAGMENT_DoanhThu){
+                toolbar.setTitle("Doanh Thu");
+                replaceFragmnet(new DoanhSo_Fragment());
+                currentFragment = FRAGMENT_DoanhThu;
+            }
+        } else if (id == R.id.top10) {
+            if(currentFragment != FRAGMENT_TOP){
+                toolbar.setTitle("Top 10");
+                replaceFragmnet(new Top10_Fragment());
+                currentFragment = FRAGMENT_TOP;
+            }
+        }
+
+        else if (id == R.id.logout) {
             AlertDialog.Builder builder = new AlertDialog.Builder(HomeAdmin.this);
             builder.setMessage("Bạn có chắc chắn muốn đăng xuất tài khoản này không ?");
             builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {

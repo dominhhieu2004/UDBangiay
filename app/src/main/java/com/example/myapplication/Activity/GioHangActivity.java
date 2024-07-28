@@ -212,6 +212,9 @@ public class GioHangActivity extends AppCompatActivity implements IClickItemDele
                 } else if (item.getItemId() == R.id.navigation_home) {
                     Intent i = new Intent(GioHangActivity.this, HomeKH.class);
                     startActivity(i);
+                } else if (item.getItemId() == R.id.navigation_person) {
+                    Intent i = new Intent(GioHangActivity.this, thongtinUser.class);
+                    startActivity(i);
                 }
 
                 return true;

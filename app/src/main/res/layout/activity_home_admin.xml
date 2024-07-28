@@ -24,7 +24,7 @@
                 app:titleTextColor="@color/black"
                 android:id="@+id/toolbar_home"
                 android:background="#F0E5CF"
-                app:title="Trang Chủ"
+                app:title="Sản Phẩm"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"

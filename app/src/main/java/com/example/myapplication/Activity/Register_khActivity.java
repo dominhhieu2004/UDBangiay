@@ -61,6 +61,7 @@ public class Register_khActivity extends AppCompatActivity {
                       boolean kt = khachHangDao.dangKy(user, pass, hoTen, diaChi, sdt);
                       if(kt){
                           Toast.makeText(Register_khActivity.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
+                          startActivity(new Intent(Register_khActivity.this, Login_khActivity.class));
                       } else {
                           Toast.makeText(Register_khActivity.this, "Đăng ký thất bại!", Toast.LENGTH_SHORT).show();
                       }
