@@ -30,27 +30,29 @@ public class QTVDao {
 
    public long update(QTV obj){
         ContentValues contentValues = new ContentValues();
-       contentValues.put("maQTV", obj.getMaQTV());
        contentValues.put("matKhau", obj.getMatKhau());
 
        return db.update("QTV", contentValues, "maQTV=?", new String[]{obj.getMaQTV()});
    }
 
 
-   private List<QTV> getData(String sql, String...selectionArgs){
+    private List<QTV> getData(String sql, String... selectionArgs) {
         List<QTV> lst = new ArrayList<>();
-       Cursor cursor = db.rawQuery(sql, selectionArgs);
-       while (cursor.moveToNext()){
-           lst.add(new QTV(cursor.getString(0),
-                   cursor.getString(1) ));
-       }
-       return lst;
-   }
+        Cursor cursor = db.rawQuery(sql, selectionArgs);
+        while (cursor.moveToNext()) {
+            lst.add(new QTV(cursor.getString(0), cursor.getString(1)));
+        }
+        cursor.close();
+        return lst;
+    }
 
    public QTV getID(String id){
         String sql = "SELECT * FROM QTV WHERE maQTV";
         List<QTV> lst = getData(sql, id);
-        return lst.get(0);
+       if (!lst.isEmpty()) {
+           return lst.get(0);
+       }
+       return null;
    }
 
    public List<QTV> getAll(){

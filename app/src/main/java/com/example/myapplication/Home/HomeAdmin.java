@@ -23,6 +23,7 @@ import com.example.myapplication.Fragment.HoaDonFragment;
 import com.example.myapplication.Fragment.HomeAdminFragment;
 import com.example.myapplication.Fragment.SanPhamFragment;
 import com.example.myapplication.Fragment.Top10_Fragment;
+import com.example.myapplication.Fragment.thongtinUserFragment;
 import com.example.myapplication.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -45,6 +46,8 @@ public class HomeAdmin extends AppCompatActivity implements NavigationView.OnNav
     private static final int FRAGMENT_DoanhThu = 4;
 
     private static final int FRAGMENT_TOP = 5;
+
+    private static final int FRAGMENT_DOIMK = 6;
     private int currentFragment = FRAGMENT_HOME;
 
     @Override
@@ -106,6 +109,12 @@ public class HomeAdmin extends AppCompatActivity implements NavigationView.OnNav
                 toolbar.setTitle("Top 10");
                 replaceFragmnet(new Top10_Fragment());
                 currentFragment = FRAGMENT_TOP;
+            }
+        } else if (id == R.id.changePassword) {
+            if(currentFragment != FRAGMENT_DOIMK){
+                toolbar.setTitle("Đổi Mật Khẩu");
+                replaceFragmnet(new thongtinUserFragment());
+                currentFragment = FRAGMENT_DOIMK;
             }
         }
 
